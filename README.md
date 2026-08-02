@@ -5,9 +5,9 @@
   <br/>
   <img src="https://img.shields.io/badge/✦%20Quote%20of%20the%20Day%20✦-7c3aed?style=flat-square&labelColor=1a1a2e" />
   <br/><br/>
-  <i>❝ Ada hukum berarti ada pelanggaran. ❞</i>
+  <i>❝ Kebebasan adalah sesuatu yang tidak terikat oleh harapan orang lain, dan hanya mengikuti kata hati sendiri. ❞</i>
   <br/>
-  <sub>— <b>Masakazu Masaki</b> · <i>Eve no Jikan</i></sub>
+  <sub>— <b>Serge</b> · <i>Fate/Apocrypha</i></sub>
   <br/><br/>
   <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6&height=2&width=60%" />
 </div>
