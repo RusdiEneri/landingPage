@@ -5,9 +5,9 @@
   <br/>
   <img src="https://img.shields.io/badge/✦%20Quote%20of%20the%20Day%20✦-7c3aed?style=flat-square&labelColor=1a1a2e" />
   <br/><br/>
-  <i>❝ Aku adalah pedangmu. Kemanapun kamu pergi aku akan selalu mengikutimu. ❞</i>
+  <i>❝ Hanya dengan memiliki orang yang dicintai saja dapat membuat pagi yang hampa menjadi indah. ❞</i>
   <br/>
-  <sub>— <b>Raphtalia</b> · <i>Tate no Yuusha no Nariagari</i></sub>
+  <sub>— <b>Akira Hiiragi</b> · <i>KimiKiss Pure Rouge: Love Fighter</i></sub>
   <br/><br/>
   <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6&height=2&width=60%" />
 </div>
