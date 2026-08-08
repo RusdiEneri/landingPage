@@ -5,10 +5,9 @@
   <br/>
   <img src="https://img.shields.io/badge/✦%20Quote%20of%20the%20Day%20✦-7c3aed?style=flat-square&labelColor=1a1a2e" />
   <br/><br/>
-  <i>❝ Kau bukannya tak bisa bermain, kau hanya tak ingin bermain.
- "Aku tidak bisa mendengar suara piano..." Kau mengatakan itu hanya untuk melarikan diri. ❞</i>
+  <i>❝ Manusia yang tak berguna tak punya hak untuk bernapas. ❞</i>
   <br/>
-  <sub>— <b>Kaori Miyazono</b> · <i>Shigatsu wa Kimi no Uso</i></sub>
+  <sub>— <b>Ryuunosuke Akutagawa</b> · <i>Bungou Stray Dogs</i></sub>
   <br/><br/>
   <img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6&height=2&width=60%" />
 </div>
