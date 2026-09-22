@@ -1,42 +1,57 @@
-name: Update Activity Log
+name: CI
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/5 * * * *'
   workflow_dispatch:
-  push:
-    paths:
-      - ".github/workflows/log.yml"
 
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
-      - name: Update log.txt
+      - name: Setup git and branch tracking
+        env:
+          # Branch dinamis: otomatis mengikuti branch default repo
+          BRANCH: ${{ github.ref_name }}
+          # Identity otomatis: pakai user yang trigger workflow
+          GIT_USER: ${{ github.actor }}
+          GIT_EMAIL: ${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com
         run: |
-          TIME=$(TZ='Asia/Jakarta' date '+%Y-%m-%d %H:%M:%S WIB')
-          echo "Last updated: $TIME" > log.txt
+          git config user.name "$GIT_USER"
+          git config user.email "$GIT_EMAIL"
+          git config pull.rebase true
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git checkout -B "$BRANCH" "origin/$BRANCH"
 
-      - name: Commit and Push
+      - name: Create 5 Commits and Push
+        env:
+          BRANCH: ${{ github.ref_name }}
         run: |
-          git config --global user.name "RusdiEneri"
-          git config --global user.email "nuruddinrusydiilham@gmail.com"
-
-          git add log.txt
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
-          git commit -m "chore: update activity log"
-          git push
+          for i in 1 2 3 4 5; do
+            echo "$(date '+%Y-%m-%d %H:%M:%S') - Commit $i" >> log.txt
+            git add log.txt
+            git commit -m "Log commit $i - $(date '+%Y-%m-%d %H:%M:%S')"
+            sleep 1
+          done
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin "$BRANCH" || git rebase --abort
+            if git push origin "$BRANCH"; then
+              echo "Push berhasil"
+              exit 0
+            fi
+            echo "Push ditolak, coba lagi 10 detik... (percobaan $attempt)"
+            sleep 10
+          done
+          exit 1
